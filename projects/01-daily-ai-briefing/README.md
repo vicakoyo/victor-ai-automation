@@ -46,7 +46,13 @@ LLM Summarisation
 Telegram Briefing
 ```
 
-The workflow separates information collection, processing and delivery into individual stages rather than treating the task as one large AI prompt.
+### Workflow Implementation
+
+The screenshot below shows the current n8n implementation of the Daily AI Briefing workflow.
+
+![Daily AI Briefing n8n workflow](workflow-overview.png.png)
+
+The implementation combines scheduled and Telegram-triggered execution with web/RSS content retrieval, filtering and transformation, aggregation, LLM-assisted summarisation and Telegram delivery.The workflow separates information collection, processing and delivery into individual stages rather than treating the task as one large AI prompt.
 
 ---
 
