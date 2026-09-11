@@ -1,66 +1,44 @@
-# Victor Akoyo — Operations Automation Portfolio
+## Projects
 
-Practical automation, AI and business-systems projects focused on improving operational reporting, information flow and repetitive business processes.
+### [01 — Daily AI Briefing](projects/01-daily-ai-briefing/)
 
-**Victor Akoyo**  
-Operations | Supply Chain | Quality | Process Improvement  
-Nairobi, Kenya
+**Platform:** n8n, OpenAI, Telegram  
+A scheduled workflow that collects selected AI-industry information, filters and processes the content, generates a concise AI-assisted briefing and delivers it automatically through Telegram.
 
-[Professional Portfolio](https://vicakoyo.github.io/) | [LinkedIn](https://www.linkedin.com/in/victorakoyo/) | [Email](mailto:vicakoyo2@gmail.com)
-
----
-
-## About This Repository
-
-My professional background is primarily in **Operations, Supply Chain, Quality Management and Process Improvement**.
-
-Across those roles, I have worked with operational data, ERP and business systems, KPI reporting, SOPs, cross-functional workflows and recurring administrative processes.
-
-I am developing automation capability to extend that experience.
-
-This repository documents practical projects where I explore how workflow automation, APIs and AI can be applied to real operational problems.
-
-The objective is not automation for its own sake.
-
-The objective is to build simpler systems that can improve:
-
-- information flow;
-- management visibility;
-- reporting;
-- repetitive process execution;
-- accountability; and
-- operational decision-making.
-
----
-
-# Projects
-
-## 01 — Daily AI Briefing
-
-**Platform:** n8n  
 **Status:** Working project / continuing development
 
-A workflow designed to collect information from selected AI-industry sources, process the incoming content, generate a concise AI-assisted briefing and deliver the result through Telegram.
+---
 
-### Business Problem
+### [02 — Executive Meeting Intelligence](projects/02-executive-meeting-intelligence/)
 
-Keeping up with developments across AI tools and platforms requires repeatedly checking multiple information sources.
+**Platform:** Make.com, Microsoft SharePoint, OpenAI, Microsoft Teams  
+A workplace workflow that converts senior leadership meeting transcripts into structured management reports and delivers the resulting output into Microsoft Teams.
 
-The workflow explores how that repetitive information-gathering process can be automated while still producing a concise output suitable for human review.
+**Status:** Workplace implementation / portfolio documentation in progress
 
-### Workflow
+---
 
-```text
-Scheduled Trigger
-      ↓
-RSS / Web Sources
-      ↓
-Content Retrieval
-      ↓
-Filtering & Processing
-      ↓
-Aggregation
-      ↓
-LLM Summarisation
-      ↓
-Telegram Briefing
+### [03 — CRM Campaign Routing Automation](projects/03-crm-campaign-routing/)
+
+**Platform:** Make.com, Pipedrive, Lemlist  
+A workflow that retrieves CRM information, applies conditional routing logic and places appropriate leads into defined outreach campaigns.
+
+**Status:** Workplace implementation / portfolio documentation in progress
+
+---
+
+### [04 — VORA Personal Operations Assistant](projects/04-vora-personal-assistant/)
+
+**Platform:** n8n, WhatsApp, structured data tables, AI  
+A personal operations assistant that combines conversational AI with structured persistent information about goals, commitments, people, check-ins and other context.
+
+**Status:** Working personal project / continuing development
+
+---
+
+### [05 — IT Support Triage Workflow](projects/05-it-support-triage/)
+
+**Platform:** Microsoft Forms, Power Automate, Microsoft Teams  
+A structured internal service workflow for capturing technology issues, generating automated notifications and supporting triage and ownership.
+
+**Status:** Workplace implementation / portfolio documentation in progress
