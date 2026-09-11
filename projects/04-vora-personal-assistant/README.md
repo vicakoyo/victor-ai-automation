@@ -88,7 +88,7 @@ Format Transcript          │
 
 The screenshot below shows the current n8n implementation of VORA.
 
-![VORA n8n workflow](workflow-overview.png)
+![VORA n8n workflow](workflow-overview2.png)
 
 The workflow combines message handling, conditional routing, audio transcription, AI-agent orchestration, conversational memory, structured data tools, external information retrieval and WhatsApp delivery.
 
