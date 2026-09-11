@@ -68,7 +68,7 @@ Branch Completion / Skip Handling
 
 The screenshot below shows the Make.com implementation of the CRM campaign-routing workflow.
 
-![CRM Campaign Routing Make.com workflow](workflow-overview.png)
+![CRM Campaign Routing Make.com workflow](workflow-overview1.png)
 
 The implementation begins with Pipedrive, retrieves the relevant contact information and then uses a Make.com Router to divide records across multiple conditional paths.
 
