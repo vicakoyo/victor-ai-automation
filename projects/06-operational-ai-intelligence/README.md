@@ -1,6 +1,6 @@
 # Operational AI Intelligence System
 
-**Platform:** Make.com • AI / LLM Processing • Business Meeting Data  
+**Platform:** Make.com • Make AI Web Search • Make AI Toolkit • Data Store • Microsoft Teams  
 **Status:** Workplace implementation / portfolio documentation in progress  
 **Project Type:** AI-Assisted Operational Intelligence • Workflow Automation • Continuous Improvement
 
@@ -8,40 +8,42 @@
 
 ## Overview
 
-The Operational AI Intelligence System is a workplace automation designed to turn recurring organisational information into useful intelligence about operational problems and potential opportunities for AI-enabled improvement.
+The Operational AI Intelligence System is a workplace automation designed to connect emerging AI capabilities with real operational problems identified across the business.
 
-The system consists of two connected workflows:
+The system was developed around information and themes emerging from recurring departmental meetings, including blockers, repetitive work, process friction and areas where teams could potentially benefit from AI or automation.
 
-1. **AI Intelligence Collector** — reviews information generated across departmental meetings and identifies recurring themes, blockers, operational issues and areas where AI or automation may be useful.
-2. **AI Weekly Curated Publisher** — converts the collected intelligence into a structured weekly output, including relevant observations and potential tools or approaches worth exploring.
+Rather than simply circulating general AI news, the objective was to make AI discovery more relevant to the organisation's actual operating needs.
 
-The objective was not simply to distribute AI news.
+The implementation uses two related Make.com workflows:
 
-The system was designed to connect AI adoption to real operational problems being discussed inside the business.
+1. **AI Intelligence Collector** — gathers relevant AI and technology intelligence, processes individual results and stores useful records for later use.
+2. **AI Weekly Curated Publisher** — retrieves the accumulated intelligence, consolidates it, uses AI to prepare a curated weekly update and publishes the result through Microsoft Teams.
+
+The result is a simple collection-to-publication pipeline for ongoing operational AI intelligence.
 
 ---
 
 ## Business Problem
 
-AI tools change quickly, but simply sharing lists of new tools does not necessarily improve a business.
+AI tools and capabilities change quickly.
 
-A more useful question is:
+However, repeatedly sharing lists of new tools does not necessarily help an organisation improve.
 
-> What problems are teams actually experiencing, and where could AI or automation make a meaningful difference?
+A more useful approach is to start with questions such as:
 
-Departmental meetings already contain useful operating information such as:
+> What problems are teams actually experiencing?
 
-- recurring blockers;
-- administrative bottlenecks;
-- repeated manual tasks;
-- communication problems;
-- information-flow issues;
-- process inefficiencies;
-- emerging priorities.
+> Which blockers keep appearing?
 
-The challenge is that this information is distributed across different conversations and can be difficult to review systematically.
+> Where is repetitive administrative work occurring?
 
-The system was developed to turn those recurring operational signals into structured intelligence.
+> Where could AI or workflow automation realistically improve the process?
+
+Recurring departmental meetings already provide useful signals about operational challenges, priorities and friction.
+
+The challenge is then connecting those internal problems with relevant external AI developments and turning the resulting information into something concise enough for regular review.
+
+The Operational AI Intelligence System was designed to support that process.
 
 ---
 
@@ -50,101 +52,325 @@ The system was developed to turn those recurring operational signals into struct
 ```text
 Departmental Meetings
         ↓
-Operational Information
+Blockers / Problems / Repetitive Work
         ↓
-AI Intelligence Collector
+Potential AI or Automation Opportunities
         ↓
-Identify Themes
+AI Intelligence Collection
         ↓
-Blockers / Repeated Work /
-Process Issues / Opportunities
+External AI / Technology Research
         ↓
-Collected Intelligence
+Structured Intelligence Records
         ↓
-AI Weekly Curated Publisher
+Data Store
         ↓
-Prioritise & Structure Insights
+Weekly Retrieval
         ↓
-Relevant AI / Automation Opportunities
+Aggregation
         ↓
-Weekly Intelligence Output
+AI-Assisted Curation
+        ↓
+Microsoft Teams
+        ↓
+Weekly Operational AI Intelligence Update
 ```
+
+The public portfolio separates the system into its two technical workflows: the **Collector** and the **Publisher**.
 
 ---
 
-## Two-Workflow Design
+# 1. AI Intelligence Collector
 
-### 1. AI Intelligence Collector
+The Collector is responsible for gathering and storing relevant AI intelligence.
 
-The Collector focuses on gathering and interpreting information from recurring organisational activity.
+Its purpose is to build a structured pool of information that can later be reviewed and curated rather than requiring the weekly publication workflow to discover everything from scratch.
 
-Its role is to identify useful signals from the week's operational discussions.
-
-Examples can include:
+## Collector Workflow
 
 ```text
-Repeated blocker
-        ↓
-Operational problem
-
-Manual repetitive activity
-        ↓
-Automation opportunity
-
-Information-access problem
-        ↓
-Potential knowledge / AI opportunity
-
-Repeated reporting requirement
-        ↓
-Potential workflow improvement
+Scheduled Execution
+       ↓
+Make AI Web Search
+       ↓
+Search / Research Response
+       ↓
+Iterator
+       ↓
+Individual Intelligence Items
+       ↓
+Data Store
+       ↓
+Stored Intelligence Records
 ```
 
-The Collector therefore acts as the information-gathering layer of the system.
+## Collector Implementation
 
----
+The screenshot below shows the Make.com implementation of the AI Intelligence Collector.
 
-### 2. AI Weekly Curated Publisher
+![Operational AI Intelligence Collector workflow](operational-ai-intelligence-collector.png)
 
-The Publisher works with the intelligence produced by the collection process.
-
-Its purpose is to turn that information into a more useful weekly output rather than simply presenting raw meeting information.
-
-The workflow helps organise the intelligence into areas such as:
-
-- important recurring operational themes;
-- blockers worth investigating;
-- processes that may benefit from automation;
-- potential AI use cases;
-- relevant tools or approaches worth exploring.
-
-The Publisher therefore acts as the interpretation and communication layer.
-
----
-
-## Why the Two Workflows Are Separate
-
-Separating collection from publishing creates a clearer architecture.
+The visible implementation contains three major processing components:
 
 ```text
-COLLECT
-   ↓
-Gather and interpret information
-
-STORE / PREPARE
-   ↓
-Maintain useful intelligence
-
-PUBLISH
-   ↓
-Select, structure and communicate
+Make AI Web Search
+        ↓
+Iterator
+        ↓
+Data Store
 ```
 
-This is more flexible than attempting to retrieve, analyse and publish everything through one large workflow.
+The workflow is scheduled to run automatically.
 
-For example, the collection process can run independently from the weekly publication process.
+---
 
-The same collected intelligence could also potentially support other outputs later.
+## How the Collector Works
+
+### AI Web Search
+
+Make AI Web Search is used to retrieve relevant external information.
+
+The aim is not simply to gather as much AI news as possible.
+
+The broader operating context is to identify developments, capabilities and tools that may be relevant to issues or opportunities being observed inside the organisation.
+
+This supports a problem-first approach:
+
+```text
+Operational Need
+      ↓
+Relevant Search
+      ↓
+Potential Technology / AI Insight
+```
+
+---
+
+### Iterator
+
+The search stage can return multiple pieces of information.
+
+The Iterator separates those results so that individual items can be processed separately.
+
+Conceptually:
+
+```text
+Search Results
+     ↓
+[Item A, Item B, Item C]
+     ↓
+Iterator
+     ↓
+Item A
+Item B
+Item C
+```
+
+This is a transferable automation concept.
+
+A collection of records often needs to be separated before each item can be stored, evaluated or processed individually.
+
+---
+
+### Data Store
+
+The resulting intelligence items are written into a Make.com Data Store.
+
+This creates persistence between workflow executions.
+
+Without persistent storage, information discovered during one run would disappear when that execution ended.
+
+The Data Store therefore acts as the connection between the collection and publishing stages.
+
+```text
+Collector
+   ↓
+Data Store
+   ↓
+Publisher
+```
+
+This also means collection and publication do not have to happen at exactly the same time.
+
+---
+
+# 2. AI Weekly Curated Publisher
+
+The Publisher is responsible for converting stored intelligence into a concise weekly output.
+
+Rather than publishing individual search results directly, it retrieves the accumulated information, consolidates it and uses AI to prepare a more structured update.
+
+## Publisher Workflow
+
+```text
+Scheduled Execution
+       ↓
+Data Store
+       ↓
+Search Stored Records
+       ↓
+Text Aggregator
+       ↓
+Combined Intelligence
+       ↓
+Make AI Toolkit
+       ↓
+AI-Assisted Curation
+       ↓
+Publishing Filter
+       ↓
+Microsoft Teams
+       ↓
+Weekly Intelligence Update
+```
+
+## Publisher Implementation
+
+The screenshot below shows the Make.com implementation of the AI Weekly Curated Publisher.
+
+![Operational AI Weekly Curated Publisher workflow](operational-ai-weekly-curated-publisher.png)
+
+The implementation contains four main stages:
+
+```text
+Data Store
+    ↓
+Text Aggregator
+    ↓
+Make AI Toolkit
+    ↓
+Microsoft Teams
+```
+
+A filter before the Teams stage provides an additional control over what continues to publication.
+
+---
+
+## How the Publisher Works
+
+### Data Store Retrieval
+
+The Publisher begins by searching the intelligence records stored by the collection process.
+
+This separates **information gathering** from **information publishing**.
+
+Instead of performing a completely new search every time a weekly report is required, the workflow can work from accumulated intelligence.
+
+---
+
+### Text Aggregation
+
+Several individual records may exist in the Data Store.
+
+The Text Aggregator combines those records into a consolidated input.
+
+```text
+Record 1
+Record 2
+Record 3
+Record 4
+    ↓
+Text Aggregator
+    ↓
+Combined Intelligence
+```
+
+This creates a more useful input for the AI-processing stage.
+
+---
+
+### AI-Assisted Curation
+
+The aggregated information is passed through the Make AI Toolkit.
+
+The AI-processing stage helps convert a collection of separate intelligence records into a more concise and structured weekly output.
+
+The objective is **curation**, not simply summarisation.
+
+Useful curation can involve identifying:
+
+- the most relevant developments;
+- common themes;
+- information connected to operational needs;
+- opportunities worth investigating;
+- tools or approaches that may merit further review.
+
+The language model therefore supports the interpretation and communication stage of the workflow.
+
+---
+
+### Publishing Control
+
+A filter is positioned before the Microsoft Teams delivery stage.
+
+This provides a control point between generated content and publication.
+
+The general concept is:
+
+```text
+Generated Output
+       ↓
+Publication Condition
+      / \
+    Pass  Fail
+     ↓     ↓
+Publish  Stop
+```
+
+This is useful because automated generation and automated publication do not always need to be treated as the same decision.
+
+---
+
+### Microsoft Teams Delivery
+
+The final curated update is published through Microsoft Teams.
+
+This places the information inside the collaboration environment already used by the organisation rather than requiring employees to visit another application.
+
+The full information flow becomes:
+
+```text
+Research
+   ↓
+Store
+   ↓
+Retrieve
+   ↓
+Aggregate
+   ↓
+Curate
+   ↓
+Control
+   ↓
+Publish
+```
+
+---
+
+## Why the System Uses Two Workflows
+
+The separation between Collector and Publisher is an important architectural decision.
+
+A single workflow could theoretically attempt to search, analyse and publish everything at once.
+
+Instead, this system separates the responsibilities:
+
+```text
+COLLECTOR
+Discover → Separate → Store
+
+PUBLISHER
+Retrieve → Aggregate → Curate → Publish
+```
+
+This provides several advantages.
+
+Collection can happen independently from publication.
+
+Multiple intelligence records can accumulate before the weekly review.
+
+The publishing workflow can work from stored information rather than depending entirely on a fresh search at the moment of publication.
+
+The architecture also makes each part easier to understand and modify independently.
 
 ---
 
@@ -152,25 +378,39 @@ The same collected intelligence could also potentially support other outputs lat
 
 ### Inputs
 
-The system uses information generated through recurring organisational meetings and departmental operating discussions.
+The wider operating process uses themes emerging from recurring departmental activity and meetings to help identify areas where AI or automation may be relevant.
 
-The public portfolio will not publish the original internal meeting information.
+The automated intelligence layer also retrieves external AI and technology information through the Make AI Web Search capability.
 
 ### Processing
 
-At a high level, the system:
+At a high level, the system performs the following sequence:
 
-1. gathers relevant information from organisational meetings;
-2. identifies operational themes and recurring problems;
-3. looks for repeated manual work and process friction;
-4. identifies areas where AI or automation may be relevant;
-5. consolidates the resulting intelligence;
-6. prepares a curated weekly view;
-7. surfaces useful observations and relevant AI opportunities.
+```text
+Identify Operational Themes
+        ↓
+Research Relevant AI Developments
+        ↓
+Separate Individual Results
+        ↓
+Store Intelligence
+        ↓
+Retrieve Stored Records
+        ↓
+Aggregate Records
+        ↓
+AI-Assisted Curation
+        ↓
+Apply Publishing Control
+        ↓
+Publish Weekly Update
+```
 
 ### Outputs
 
-The primary output is a structured weekly intelligence update designed to connect emerging AI capabilities with actual operational needs.
+The primary output is a curated operational AI intelligence update delivered through Microsoft Teams.
+
+The intended result is to make emerging AI capabilities easier to evaluate in the context of actual business problems.
 
 ---
 
@@ -178,124 +418,140 @@ The primary output is a structured weekly intelligence update designed to connec
 
 ### Problem-First AI Adoption
 
-Starting with operational problems rather than beginning with an AI tool and searching for somewhere to use it.
+Starting with business problems and operational friction rather than starting with a new AI tool.
 
-### Organisational Intelligence
+### Scheduled Automation
 
-Using information generated through normal operating activity to identify themes and opportunities across the business.
+Running recurring information processes automatically rather than relying on manual research.
 
-### Multi-Stage Automation
+### AI-Assisted Research
 
-Separating information collection from later analysis and publishing.
+Using AI-enabled web search to retrieve information relevant to an operational intelligence process.
 
-### LLM-Assisted Analysis
+### Iteration
 
-Using language models to help interpret unstructured organisational information.
+Breaking collections of search results into individual records.
 
-### Continuous Improvement
+### Persistence
 
-Looking for recurring friction, blockers and repetitive work that may justify process redesign or automation.
+Storing intelligence so that it remains available to later workflow executions.
 
-### Management Information
+### Multi-Workflow Architecture
 
-Turning distributed operational information into a more structured view for review and decision-making.
+Allowing separate workflows to perform collection and publication responsibilities.
 
-### AI Opportunity Identification
+### Aggregation
 
-Connecting business problems with possible AI or automation interventions rather than recommending technology in isolation.
+Combining multiple stored records into a controlled input for later analysis.
+
+### LLM-Assisted Curation
+
+Using an AI model to turn accumulated information into a more useful management-facing output.
+
+### Conditional Publishing
+
+Applying a control between content generation and distribution.
+
+### Microsoft Teams Integration
+
+Delivering the resulting intelligence directly into the organisation's collaboration environment.
 
 ---
 
-## Problem-First AI Framework
+## Problem-First AI Approach
 
-An important principle behind this project was:
+One of the principles behind the system was that AI adoption should begin with the work.
+
+The preferred sequence is:
 
 ```text
-Business Problem
-      ↓
-Understand Process
-      ↓
+Understand the Business
+        ↓
+Identify the Problem
+        ↓
+Understand the Process
+        ↓
 Identify Friction
-      ↓
+        ↓
 Determine Whether Automation Helps
-      ↓
-Select Appropriate Technology
+        ↓
+Research Relevant Technology
+        ↓
+Evaluate the Opportunity
 ```
 
 rather than:
 
 ```text
-New AI Tool
-      ↓
-Search for Something to Automate
+Find New AI Tool
+       ↓
+Look for Somewhere to Use It
 ```
 
-This reduces the risk of adopting technology simply because it is new.
-
-The objective is operational improvement, not AI adoption for its own sake.
+This reduces the risk of introducing unnecessary technology and keeps AI adoption connected to operational value.
 
 ---
 
 ## Operational Relevance
 
-The architecture could be applied to many organisations where recurring meetings contain valuable information that is difficult to consolidate.
+The architecture is not limited to AI-tool discovery.
 
-For example:
+The underlying pattern is:
 
 ```text
-Meetings
-   ↓
-Issues + Actions + Blockers
-   ↓
-Pattern Detection
-   ↓
-Cross-Department Themes
-   ↓
-Improvement Opportunities
-   ↓
-Management Intelligence
+Collect Information
+       ↓
+Store Structured Records
+       ↓
+Retrieve Over Time
+       ↓
+Aggregate
+       ↓
+Analyse / Curate
+       ↓
+Publish
 ```
 
-Potential applications include:
+The same pattern could support:
 
-- operational excellence;
-- continuous improvement;
-- digital transformation;
-- AI adoption governance;
+- continuous-improvement intelligence;
+- recurring operational-risk reviews;
+- supplier intelligence;
+- customer-feedback themes;
+- quality issue monitoring;
+- competitor intelligence;
+- technology monitoring;
 - management reporting;
-- process improvement;
-- knowledge management;
 - recurring blocker analysis;
-- automation opportunity discovery.
+- operational excellence programmes.
+
+The transferable capability is designing a recurring information process rather than simply producing an AI newsletter.
 
 ---
 
 ## Human Review and Decision-Making
 
-The system is designed to support human judgement rather than automatically decide which technologies a business should adopt.
+The system is intended to support human judgement.
 
-The workflow can help surface patterns and opportunities.
+Identifying a possible AI opportunity does not automatically mean that the organisation should implement it.
 
-Management still needs to determine:
-
-- whether the problem is important;
-- whether automation is appropriate;
-- whether the proposed approach is secure;
-- whether the benefit justifies the effort;
-- who should own implementation;
-- whether human oversight is required.
-
-The intended relationship is:
+Human review is still required to determine:
 
 ```text
-Automation
-    ↓
-Collect + organise + surface patterns
-    ↓
-Human Review
-    ↓
-Prioritise + validate + decide
+Is the problem important?
+        ↓
+Is the proposed technology appropriate?
+        ↓
+Is the use case secure and responsible?
+        ↓
+Will it genuinely reduce work or improve outcomes?
+        ↓
+Does the expected value justify implementation?
 ```
+
+The automation helps surface information.
+
+People remain responsible for prioritisation and implementation decisions.
 
 ---
 
@@ -303,47 +559,28 @@ Prioritise + validate + decide
 
 This project was implemented in a real workplace environment.
 
-The public repository will therefore not contain:
+The public portfolio will therefore not contain:
 
-- original internal meeting transcripts;
-- employee information;
+- original departmental meeting transcripts;
+- private management discussions;
 - customer information;
-- confidential company metrics;
-- internal management reports;
-- private Teams or SharePoint content;
+- employee information;
+- internal company metrics;
+- confidential operational issues;
+- private Microsoft Teams content;
 - credentials;
 - API keys or tokens;
 - private workflow execution data.
 
-Portfolio documentation will focus on the architecture, process logic and transferable concepts.
+Screenshots are used to demonstrate the workflow architecture rather than expose the underlying company information.
 
-Where sample information is needed, recreated or anonymised examples will be used.
+Any future example outputs will use anonymised or recreated information.
 
 ---
 
 ## Development Status
 
-The workplace implementation included separate workflows for:
-
-- organisational AI intelligence collection;
-- weekly curated AI intelligence publishing.
-
-Further portfolio documentation may include:
-
-- a recreated architecture diagram;
-- sanitised screenshots of the Collector workflow;
-- sanitised screenshots of the Publisher workflow;
-- representative example input;
-- recreated weekly intelligence output;
-- explanation of how information moves between the two workflows;
-- processing and filtering logic;
-- lessons learned.
-
----
-
-## Portfolio Evidence
-
-This project will progressively document:
+The workplace implementation includes two related Make.com workflows:
 
 ```text
 AI Intelligence Collector
@@ -353,23 +590,65 @@ AI Weekly Curated Publisher
 Operational AI Intelligence System
 ```
 
-The objective is to demonstrate both the technical workflow and the operating principle behind it:
+The documented Collector currently includes:
 
-> **Start with real business problems, use organisational information to identify recurring friction, and then evaluate where AI or automation can create practical value.**
+```text
+Make AI Web Search
+→ Iterator
+→ Data Store
+```
+
+The documented Publisher currently includes:
+
+```text
+Data Store
+→ Text Aggregator
+→ Make AI Toolkit
+→ Microsoft Teams
+```
+
+Further portfolio development may include:
+
+- recreated example intelligence records;
+- anonymised weekly-output examples;
+- explanation of the Data Store structure;
+- example aggregation flow;
+- more detailed filtering logic;
+- testing scenarios;
+- error-handling documentation;
+- lessons learned from running the system.
+
+---
+
+## Portfolio Evidence
+
+This project currently includes:
+
+- documentation of the business problem;
+- two-workflow system architecture;
+- real Collector workflow evidence;
+- real Publisher workflow evidence;
+- AI-assisted research;
+- persistence through Make Data Store;
+- information aggregation;
+- AI-assisted curation;
+- Microsoft Teams publication.
+
+Future evidence will be added progressively without exposing confidential workplace information.
 
 ---
 
 ## Key Learning
 
-The most important lesson from this project is that an effective organisational AI strategy should not begin with technology.
-
-It should begin with the work.
+The most important lesson from this project is that useful organisational AI adoption should connect technology discovery to actual operational problems.
 
 The reusable pattern is:
 
-> **What is happening in the organisation → what problems keep appearing → which processes create friction → which problems are worth solving → where can automation or AI genuinely help → what should people review and act on?**
+> **What problems are appearing in the organisation → what information could help → how can that information be collected → how should it be stored → how can it be consolidated → where can AI help interpret it → what should people review and act on?**
 
-AI becomes a tool within operational improvement rather than the objective itself.
+The AI tool itself is not the operating system.
+
+The real value comes from the process that connects organisational problems, external intelligence, structured information and human decision-making.
 
 ---
 
