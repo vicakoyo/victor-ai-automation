@@ -216,6 +216,39 @@ The Collector builds a persistent pool of relevant intelligence. The Publisher r
 
 ---
 
+## [07 — Trello to Xero Draft Invoicing](projects/07-trello-xero-draft-invoicing/)
+
+**Platform:** n8n • Trello • Gmail • PDF extraction • Xero API  
+**Status:** Active operational workflow / continuing refinement
+
+An order-to-accounting process that reads eligible Trello work orders, retrieves original purchase-order correspondence, reconciles line items and amendments, checks Xero records and prepares **draft** invoices for accounting review. Duplicate and data-validation controls are part of the workflow; invoice approval and sending are not automated.
+
+[View project →](projects/07-trello-xero-draft-invoicing/)
+
+---
+
+## [08 — ChatGPT-Assisted Trello Work Orders](projects/08-chatgpt-trello-work-order-assistant/)
+
+**Platform:** ChatGPT • Trello integration / MCP  
+**Status:** AI-assisted operational process with human review
+
+A conversational interface for reading Trello boards/cards and preparing structured work-order descriptions and updates using existing operational templates. This is **human-directed tool use**, not a claim of unattended autonomous order processing.
+
+[View project →](projects/08-chatgpt-trello-work-order-assistant/)
+
+---
+
+## [09 — Shipping CSV Preparation & Trello Document Filing](projects/09-australia-post-shipping-document-automation/)
+
+**Platform:** n8n • Trello • Australia Post MyPost CSV • Google Drive • Forms  
+**Status:** Two active workflows / continuing refinement
+
+A two-stage shipping-administration system: one workflow extracts and validates eligible orders, generates MyPost-compatible CSV data and stores it in Google Drive; a second accepts the generated shipping-label and tax-invoice PDFs and attaches them to the corresponding Trello cards. **Postage purchase is a separate operator action.**
+
+[View project →](projects/09-australia-post-shipping-document-automation/)
+
+---
+
 # Portfolio Map
 
 | Project | Primary Problem | Main Concepts |
@@ -226,6 +259,9 @@ The Collector builds a persistent pool of relevant intelligence. The Publisher r
 | **VORA** | Fragmented personal context | Agents, tools, memory, structured data, audio, search |
 | **IT Support Triage** | Unstructured technology requests | Forms, workflow routing, ownership, notifications |
 | **Operational AI Intelligence** | Connecting business problems with relevant AI opportunities | Research, persistence, aggregation, curation, publishing |
+| **Trello → Xero Draft Invoicing** | Re-entering work orders into accounting | Document extraction, reconciliation, draft controls, APIs |
+| **ChatGPT + Trello Work Orders** | Inconsistent manual order administration | Tool use, structured drafting, human checks |
+| **Shipping Preparation & Filing** | Repetitive postage data entry and document filing | CSV transformation, validation, Google Drive, Trello attachments |
 
 ---
 
